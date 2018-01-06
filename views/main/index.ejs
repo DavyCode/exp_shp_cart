@@ -1,7 +1,13 @@
 <% layout('layout') -%>
-
+<div class="progress">
+    <div class="indeterminate"></div>
+</div>
 <h1><%= title %></h1>
 <p>Welcome to <%= title %></p>
+
+<!-- <div class="parallax-container">
+    <div class="parallax"><img src="images/bg-1."></div>
+</div> -->
 <!-- <div class="carousel carousel-slider center" data-indicators="true">
     <div class="carousel-fixed-item center">
       <a class="btn waves-effect white grey-text darken-text-2">button</a>
@@ -119,11 +125,11 @@
               <img src="" alt="" class="activator"/>
             </div>
             <div class="card-image">
-                <img src="<%= product.imagePath %>">
+                <img  class="materialboxed" width="650" src="<%= product.imagePath %>">
                 <a class="btn-floating btn-small waves-effect waves-light btn tooltipped right cyan pulse" onclick="Materialize.toast('Added to cart', 3000, 'rounded')" data-delay="50" data-position="top" data-tooltip="add to cart"><i class="material-icons">add</i></a>
-                <!-- data-position can be : bottom, top, left, or right -->
-                <!-- data-delay controls delay before tooltip shows (in milliseconds)-->
-                <!-- <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="add to cart"><i class="material-icons">add</i></a> -->
+                <div class="gallery-action">
+                    <a class="btn-floating btn-small waves-effect waves-light cyan pulse" ><i class="material-icons">favorite</i></a>
+                </div>
             </div>
             <div class="card-action">
               <div class="card-content">
@@ -159,4 +165,11 @@
 
 <script language="JavaScript">
    $('.carousel.carousel-slider').carousel({fullWidth: true});
-</script
+   $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+  $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+
+</script>
