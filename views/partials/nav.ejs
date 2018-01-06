@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/materialize.min.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
-  <body>
-
 <nav>
   <div class="nav-wrapper">
     <div class="container">
-      <a href="#" class="brand-logo">LOGO</a>
+      <a href="/" class="brand-logo">LOGO</a>
       <!-- mobile menu trigger -->
       <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
       <!-- desktop menu content -->
@@ -22,8 +12,8 @@
         <li><a href="#">item</a></li>
         <!-- desktop menu dropdown content -->
         <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">Logout</a></li>
-            <li><a href="#!">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/profile">Dashboard</a></li>
         </ul>
       </ul>
       <!-- mobile and tablet menu content -->
@@ -47,8 +37,8 @@
               <div class="collapsible-body">
                 <!-- mobile and tablet dropdown content -->
                 <ul>
-                  <li><a href="#!">Logout</a></li>
-                  <li><a href="#!">Dashboard</a></li>
+                  <li><a href="/logout">Logout</a></li>
+                  <li><a href="/profile">Dashboard</a></li>
                 </ul>
                 </div>
               </li>
@@ -59,13 +49,3 @@
     </div>
   </div>
 </nav>
-
-
-
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/init.js"></script>
-    <script src="/javascripts/materialize.min.js"></script>
-  </body>
-</html>
