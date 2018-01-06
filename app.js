@@ -11,6 +11,7 @@ var ejs   = require('ejs');
 var ejs_mate = require('ejs-mate');
 var MongoStore = require('connect-mongo')(session);
 var passport = require('passport');
+var validator = require('express-validator');
 
 
 var secret = require('./config/secret')
@@ -41,13 +42,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(validator());
 app.use(cookieParser());
 app.use(session({
     secret: secret.secretKey,
     resave: true,
     saveUninitialized: true,
-    store : new MongoStore({url : secret.database, autoReconnect : true})
+    store : new MongoStore({url : secret.database, autoReconnect : true}),
+    cookie: { maxAge: 180 * 60 * 1000 }
 }));
 
 
@@ -66,6 +68,8 @@ app.use((req, res, next) => {
     res.locals.user = req.user;
     res.locals.error = req.flash('error');
     res.locals.success = req.flash('success');
+    res.locals.login =res.isAuthenticated();
+    res.locals.session = req.session;
     next();
 });
 
