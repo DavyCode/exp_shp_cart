@@ -7,3 +7,12 @@ body {
 a {
   color: #00B7FF;
 }
+.price{
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.botton_add_to_cart{
+  font-weight: 39px;
+  font-size:20px
+}
