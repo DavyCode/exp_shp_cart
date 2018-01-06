@@ -2,10 +2,33 @@
 
 <h1><%= title %></h1>
 <p>Welcome to <%= title %></p>
+<!-- <div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+    </div>
+    <div class="carousel-item red white-text" href="#one!">
+      <h2>First Panel</h2>
+      <img src="images/shoe.PNG">
+      <p class="white-text">This is your first panel</p>
+    </div>
+    <div class="carousel-item amber white-text" href="#two!">
+      <h2>Second Panel</h2>
+      <img src="images/shoe.PNG">
+      <p class="white-text">This is your second panel</p>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2>Third Panel</h2>
+      <p class="white-text">This is your third panel</p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2>Fourth Panel</h2>
+      <p class="white-text">This is your fourth panel</p>
+    </div>
+</div> -->
 
 <div class="row">
   <!-- ================================================= -->
-  <div class="col l4 s12 m4">
+  <!-- <div class="col l4 s12 m4">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img src="" alt="" class="activator"/>
@@ -26,10 +49,10 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam facere illo magnam quia sint sunt necessitatibus iste quisquam voluptas provident vel iusto ullam dolores explicabo aliquam est, reprehenderit quidem! </p>
         </div>
       </div>
-  </div>
+  </div> -->
     <!-- ===================================================== -->
      <!-- ================================================= -->
-  <div class="col l4 s12 m4">
+  <!-- <div class="col l4 s12 m4">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img src="" alt="" class="activator"/>
@@ -50,10 +73,10 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam facere illo magnam quia sint sunt necessitatibus iste quisquam voluptas provident vel iusto ullam dolores explicabo aliquam est, reprehenderit quidem! </p>
         </div>
       </div>
-  </div>
+  </div> -->
     <!-- ===================================================== -->
      <!-- ================================================= -->
-  <div class="col l4 s12 m4">
+  <!-- <div class="col l4 s12 m4">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img src="" alt="" class="activator"/>
@@ -61,7 +84,7 @@
         <div class="card-image">
             <img src="images/shoe.PNG">
 
-            <a class="btn-floating btn-large halfway-fab waves-effect waves-light green"><i class="material-icons">add</i></a>
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light green"><i class="material-icons">add</i></a> -->
 
   <!-- <div class="fixed-action-btn horizontal">
     <a class="btn-floating btn-large pink">
@@ -74,7 +97,7 @@
     </ul>
   </div> -->
 
-        </div>
+        <!-- </div>
         <div class="card-action">
             <div class="card-content">
               <span class="card-title activator">Men Loafers<i class="material-icons right">more_vert</i></span>
@@ -87,7 +110,53 @@
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam facere illo magnam quia sint sunt necessitatibus iste quisquam voluptas provident vel iusto ullam dolores explicabo aliquam est, reprehenderit quidem! </p>
         </div>
       </div>
-  </div>
+  </div> -->
     <!-- ===================================================== -->
+  <% products.forEach((product) => {%>
+      <div class="col l4 s12 m4 index-column">
+          <div class="card z-depth-2 hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img src="" alt="" class="activator"/>
+            </div>
+            <div class="card-image">
+                <img src="<%= product.imagePath %>">
+                <a class="btn-floating btn-small waves-effect waves-light btn tooltipped right cyan pulse" onclick="Materialize.toast('Added to cart', 3000, 'rounded')" data-delay="50" data-position="top" data-tooltip="add to cart"><i class="material-icons">add</i></a>
+                <!-- data-position can be : bottom, top, left, or right -->
+                <!-- data-delay controls delay before tooltip shows (in milliseconds)-->
+                <!-- <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="add to cart"><i class="material-icons">add</i></a> -->
+            </div>
+            <div class="card-action">
+              <div class="card-content">
+                <span class="card-title activator"><%= product.title %><i class="material-icons right">more_vert</i></span>
+                <p class="price">$<%= product.price %></p>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title activator"><%= product.title %><i class="material-icons right red pulse">close</i></span>
+              <p> <%= product.description %> </p>
+            </div>
+          </div>
+      </div>
+  <%})%>
+
+
 
 </div>
+<div>
+
+    <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+      </ul>
+
+</div>
+
+
+<script language="JavaScript">
+   $('.carousel.carousel-slider').carousel({fullWidth: true});
+</script
