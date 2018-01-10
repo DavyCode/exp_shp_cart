@@ -11,10 +11,20 @@
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1"> <i class="material-icons right">person_outline</i>User management<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="#">item</a></li>
         <!-- desktop menu dropdown content -->
-        <ul id='dropdown1' class='dropdown-content'>
+        <ul id='dropdown1' class='dropdown-content'>       
+          <% if(!currentUser){%>
+            <li><a href="/register">Sign Up </a></li>
+            <li><a href="/login">Login</a></li>
+          <%}else{%>
+            <li><a href="#">Welcome <%= currentUser.profile.name%></a></li>
             <li><a href="/logout">Logout</a></li>
             <li><a href="/profile">Dashboard</a></li>
+          <%}%>
         </ul>
+
+
+
+
       </ul>
       <!-- mobile and tablet menu content -->
       <ul id="mobile-menu" class="side-nav">
@@ -37,8 +47,14 @@
               <div class="collapsible-body">
                 <!-- mobile and tablet dropdown content -->
                 <ul>
-                  <li><a href="/logout">Logout</a></li>
-                  <li><a href="/profile">Dashboard</a></li>
+                  <% if(!currentUser){%>
+                    <li><a href="/register">Sign Up </a></li>
+                    <li><a href="/login">Login</a></li>
+                  <%}else{%>
+                    <li><a href="#">Welcome <%= currentUser.profile.name%></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/profile">Dashboard</a></li>
+                  <%}%>
                 </ul>
                 </div>
               </li>

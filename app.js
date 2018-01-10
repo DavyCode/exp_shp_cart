@@ -65,10 +65,10 @@ app.use(flash());
 
 // middleware
 app.use((req, res, next) => {
-    res.locals.user = req.user;
+    res.locals.currentUser = req.user;
     res.locals.error = req.flash('error');
     res.locals.success = req.flash('success');
-    res.locals.login =res.isAuthenticated();
+    res.locals.login =req.isAuthenticated();
     res.locals.session = req.session;
     next();
 });
